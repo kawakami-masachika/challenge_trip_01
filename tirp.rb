@@ -18,17 +18,18 @@ while true do
   puts "1~3の番号を入力して下さい。"
 end
 
-if select_plan == 1
+case select_plan
+when 1
   place = "沖縄"
   price = 10000
-elsif select_plan == 2
+when 2
   place = "北海道"
   price = 20000
-elsif select_plan == 3
+when 3
   place = "九州"
   price = 15000
 end
-puts "#{place}旅行旅行ですね"
+puts "#{place}旅行ですね"
 
 puts "何名で予約されますか？"
 while true do
@@ -48,4 +49,4 @@ if numbers >= DISCOUNT_GROUP
   puts "#{numbers}名ですので#{(DISCOUNTS_RATE * 100).floor}%割引となります"
   total_price *= AFTER_DISCOUNT_RATE
 end
-puts "合計料金は#{total_price}円になります。"
+puts "合計料金は#{total_price.floor}円になります。"
